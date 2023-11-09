@@ -1,4 +1,4 @@
-public class HashMapDivisao {
+public class HashSubtracao {
     private Lista[] tabela;
     private int numeroColisoes = 0;
 
@@ -6,7 +6,7 @@ public class HashMapDivisao {
     private int tamanho;
 
 
-    public HashMapDivisao(int tamanho) {
+    public HashSubtracao(int tamanho) {
         tabela = new Lista[tamanho];
         this.tamanho = tamanho;
 
@@ -16,8 +16,9 @@ public class HashMapDivisao {
     }
 
     private int calcularIndice(int codigo) {
-        int indice = codigo % tamanho;
-        return Math.abs(indice);
+        int indice = codigo - 1234;
+        int indicePositivo = Math.abs(indice);
+        return indicePositivo % tamanho;
     }
 
     public void inserir(Registro registro) {
@@ -29,9 +30,11 @@ public class HashMapDivisao {
             numeroColisoes ++;
         }
     }
+
     public int getComparacoes() {
         return comparacoes;
     }
+
     public void buscar(Registro registro) {
         int indice = calcularIndice(registro.getCod());
 
@@ -39,7 +42,7 @@ public class HashMapDivisao {
         var atual = this.tabela[indice].getPrimeiro();
 
         while (!achou) {
-            comparacoes++;
+            comparacoes = comparacoes + comparacoes;
 
             if (atual.getCod() == registro.getCod()) {
                 achou = true;
@@ -47,6 +50,7 @@ public class HashMapDivisao {
             }
             else atual = atual.getProximo();
         }
+
 
     }
 }

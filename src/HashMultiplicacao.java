@@ -1,4 +1,4 @@
-public class HashMapMultiplicacao {
+public class HashMultiplicacao {
     private Lista[] tabela;
     private int numeroColisoes = 0;
 
@@ -6,7 +6,7 @@ public class HashMapMultiplicacao {
     private int tamanho;
 
 
-    public HashMapMultiplicacao(int tamanho) {
+    public HashMultiplicacao(int tamanho) {
         tabela = new Lista[tamanho];
         this.tamanho = tamanho;
 
